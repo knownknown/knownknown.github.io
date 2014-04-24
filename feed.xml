@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>   
     <title>near-perfect clarity</title>
-    <atom:link href="https://dl.dropboxusercontent.com/u/39888659/known_known/feed.xml" rel="self" type="application/rss+xml"></atom:link>
-    <link>https://dl.dropboxusercontent.com/u/39888659/known_known</link>
+    <atom:link href="http://knownknown.github.io//feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>http://knownknown.github.io/</link>
     <description>there will be near-perfect clarity</description>
     <pubDate>Tue, 22 Apr 2014 20:00:00 -0400</pubDate>
     <generator>The mighty Wintersmith</generator>
     <language>en</language>
     <item>
       <title>A Brief Note on Sentiment</title>
-      <link>https://dl.dropboxusercontent.com/u/39888659/known_known/articles/02_sentiment/</link>
+      <link>http://knownknown.github.io//articles/02_sentiment/</link>
       <pubDate>Tue, 22 Apr 2014 20:00:00 -0400</pubDate>
-      <guid isPermaLink="true">https://dl.dropboxusercontent.com/u/39888659/known_known/articles/02_sentiment/</guid>
+      <guid isPermaLink="true">http://knownknown.github.io//articles/02_sentiment/</guid>
       <author></author>
       <!-- passing locals.url resolves all relative urls to absolute-->
       <description>&lt;p&gt;&lt;em&gt;TLDR: Inferring the emotional content of text opens up very cool possibilities, but it’s just not appropriate for data with this level of nuance and complexity.&lt;/em&gt;&lt;/p&gt;
@@ -40,9 +40,9 @@
     </item>
     <item>
       <title>Named Entities</title>
-      <link>https://dl.dropboxusercontent.com/u/39888659/known_known/articles/01_named_entities/</link>
+      <link>http://knownknown.github.io//articles/01_named_entities/</link>
       <pubDate>Mon, 21 Apr 2014 20:00:00 -0400</pubDate>
-      <guid isPermaLink="true">https://dl.dropboxusercontent.com/u/39888659/known_known/articles/01_named_entities/</guid>
+      <guid isPermaLink="true">http://knownknown.github.io//articles/01_named_entities/</guid>
       <author></author>
       <!-- passing locals.url resolves all relative urls to absolute-->
       <description>&lt;p&gt;&lt;em&gt;TLDR: Extracting important entities from the text is an important first step and provides a birds-eye view of all the content. But what we’re interested in is most likely at the margins.&lt;/em&gt;&lt;/p&gt;
@@ -111,9 +111,9 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Another way of representing this is to plot the cumulative distribution of occurrences ordered by their frequency. The full set of entities is too big to list, but we can reveal the entities at regular intervals to get an idea of the types of names in that part of the distribution.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/39888659/known_known/articles/01_named_entities/cumsum.PERSON.png&quot; alt=&quot;PERSON distribution&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/39888659/known_known/articles/01_named_entities/cumsum.LOCATION.png&quot; alt=&quot;LOCATION distribution&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/39888659/known_known/articles/01_named_entities/cumsum.ORGANIZATION.png&quot; alt=&quot;ORGANIZATION distribution&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://knownknown.github.io/articles/01_named_entities/cumsum.PERSON.png&quot; alt=&quot;PERSON distribution&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://knownknown.github.io/articles/01_named_entities/cumsum.LOCATION.png&quot; alt=&quot;LOCATION distribution&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://knownknown.github.io/articles/01_named_entities/cumsum.ORGANIZATION.png&quot; alt=&quot;ORGANIZATION distribution&quot;&gt;&lt;/p&gt;
 &lt;p&gt;The grey line here is what we would expect to see if the same number of entities were just mentioned uniformly by each cable (it’s also slightly convex because we’re ordering by frequency). The difference between these two lines is a rough metric of the diversity of the text. For example, we see that top locations reoccur much more frequently than top persons. In fact, only 48 locations account for 50% of &lt;em&gt;all&lt;/em&gt; instances where a location is mentioned (compared to 448 organizations, and 1115 persons).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Discussion&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Looking at the top entities, most of the locations and organizations are unsurprising and consist of common American or European terms and synonyms. The presence of Georgia and Ukraine this high on the list stands out, and is indicative of the important role those two countries play in the Russian “near-abroad”. This importance is further reflected in the abundance of references to Georgian president Saakashvili. The terms “Miloard” and “Dodik” are the only real surprises, referring to the Serbian &lt;a href=&quot;http://en.wikipedia.org/wiki/Milorad_Dodik&quot;&gt;politician&lt;/a&gt; and representing the only other foreign entity. It’s interesting to note that Dodik appears to be a continued key player in Moscow and ardent supporter of the Russian occupation of Crimea.&lt;/p&gt;
