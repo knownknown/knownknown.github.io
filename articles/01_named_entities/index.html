@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Named Entities &mdash; near-perfect clarity
+    </title>
+    <link rel="alternate" href="https://dl.dropboxusercontent.com/u/39888659/known_known/feed.xml" type="application/rss+xml" title="there will be near-perfect clarity">
+    <link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/39888659/known_known/css/style.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya:400italic,400">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+SC">
+  </head>
+  <body>
+    <div class="container">
+      <header><img src="https://dl.dropboxusercontent.com/u/39888659/known_known/globe.png">
+        <p></p><a href="https://dl.dropboxusercontent.com/u/39888659/known_known/index.html" class="blog-title">near-perfect clarity</a>
+      </header>
+      <article class="post">
+        <h1 class="post-title">Named Entities</h1>
+        <section class="content"><p><em>TLDR: Extracting important entities from the text is an important first step and provides a birds-eye view of all the content. But what we’re interested in is most likely at the margins.</em></p>
+<p><strong>Introduction</strong></p>
+<p><strong>Results</strong></p>
+<p>The cables tagged “RS” consist of 7,803 locations; 19,105 organizations; and 20,680 persons. Roughly a quarter of the entities appear in at least two cables, and I’ll focus on these for now as they are less likely to be false identifications. A total of 280 (2%) unique entities account for 50% of the entity-to-cable relationships. The most over-represented entities are:</p>
+<table>
+<thead>
+<tr>
+<th>LOCATION</th>
+<th>ORGANIZATION</th>
+<th>PERSON</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.7% russia</td>
+<td>2.6% mfa</td>
+<td>2.9% putin</td>
+</tr>
+<tr>
+<td>5.5% us</td>
+<td>2.1% eu</td>
+<td>1.9% medvedev</td>
+</tr>
+<tr>
+<td>4.5% moscow</td>
+<td>2.0% nato</td>
+<td>1.1% lavrov</td>
+</tr>
+<tr>
+<td>2.0% united</td>
+<td>1.4% un</td>
+<td>0.7% obama</td>
+</tr>
+<tr>
+<td>1.9% georgia</td>
+<td>1.1% osce</td>
+<td>0.7% gottemoeller</td>
+</tr>
+<tr>
+<td>1.5% washington</td>
+<td>0.8% gazprom</td>
+<td>0.6% saakashvili</td>
+</tr>
+<tr>
+<td>1.5% eu</td>
+<td>0.6% ngo</td>
+<td>0.5% milorad</td>
+</tr>
+<tr>
+<td>1.5% europe</td>
+<td>0.6% duma</td>
+<td>0.4% bush</td>
+</tr>
+<tr>
+<td>1.3% ukraine</td>
+<td>0.6% usg</td>
+<td>0.3% dodik</td>
+</tr>
+<tr>
+<td>1.2% china</td>
+<td>0.5% unsc</td>
+<td>0.3% taylor</td>
+</tr>
+</tbody>
+</table>
+<p>Another way of representing this is to plot the cumulative distribution of occurrences ordered by their frequency. The full set of entities is too big to list, but we can reveal the entities at regular intervals to get an idea of the types of names in that part of the distribution.</p>
+<p><img src="/articles/01_named_entities/cumsum.PERSON.png" alt="PERSON distribution"></p>
+<p><img src="/articles/01_named_entities/cumsum.LOCATION.png" alt="LOCATION distribution"></p>
+<p><img src="/articles/01_named_entities/cumsum.ORGANIZATION.png" alt="ORGANIZATION distribution"></p>
+<p>The grey line here is what we would expect to see if the same number of entities were just mentioned uniformly by each cable (it’s also slightly convex because we’re ordering by frequency). The difference between these two lines is a rough metric of the diversity of the text. For example, we see that top locations reoccur much more frequently than top persons. In fact, only 48 locations account for 50% of <em>all</em> instances where a location is mentioned (compared to 448 organizations, and 1115 persons).</p>
+<p><strong>Discussion</strong></p>
+<p>Looking at the top entities, most of the locations and organizations are unsurprising and consist of common American or European terms and synonyms. The presence of Georgia and Ukraine this high on the list stands out, and is indicative of the important role those two countries play in the Russian “near-abroad”. This importance is further reflected in the abundance of references to Georgian president Saakashvili. The terms “Miloard” and “Dodik” are the only real surprises, referring to the Serbian <a href="http://en.wikipedia.org/wiki/Milorad_Dodik">politician</a> and representing the only other foreign entity. It’s interesting to note that Dodik appears to be a continued key player in Moscow and ardent supporter of the Russian occupation of Crimea.</p>
+<p>One of way of looking at this is that NER has reduced a set of documents containing 1.2 million lines down to the few key players with no apparent false-positives. Had we applied this approach to a secretive organization this table would already by quite useful. On the other hand, all we <em>really</em> learned could have been gleaned by skimming through World Fact Book on the US and Russia. NER is clearly relevant, but higher-level analysis will be needed to uncover truly novel information.</p>
+</section>
+      </article>
+    </div>
+    <div class="footer-container">
+      <div class="container">
+        <footer>
+          <ul>
+            <li><a href="https://dl.dropboxusercontent.com/u/39888659/known_known/index.html">Home</a></li>
+            <li><a href="https://dl.dropboxusercontent.com/u/39888659/known_known/about.html">About</a></li>
+            <li><a href="https://dl.dropboxusercontent.com/u/39888659/known_known/archive.html">Archive</a></li>
+          </ul>
+          <p class="copyright">&copy;2014 Author</p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

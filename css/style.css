@@ -1,0 +1,272 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 118%;
+  -webkit-text-size-adjust: 118%;
+  -ms-text-size-adjust: 118%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  text-rendering: optimizeLegibility;
+  font-family: 'Alegreya', georgia, serif;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 400;
+  color: #444;
+  background: #f6f5f2;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  word-break: hyphenate;
+  word-wrap: break-word;
+}
+a {
+  color: #444;
+}
+a:hover {
+  color: #f55;
+}
+ul,
+ol,
+pre {
+  margin-bottom: 1rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  margin: 1rem 0;
+  line-height: 2.6154rem;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: none;
+  color: inherit;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  color: #f55;
+  text-decoration: none;
+}
+h1 {
+  font-size: 2.6154rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.6154rem;
+}
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+}
+blockquote,
+ol,
+ul {
+  margin: 0;
+  padding-left: 3.2308rem;
+  color: 333;
+}
+blockquote {
+  padding-right: 3.2308rem;
+}
+ul {
+  list-style-type: square;
+}
+ol {
+  list-style-type: decimal;
+}
+pre {
+  padding: 0.8em;
+  background: $whiteishdarker;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.5em;
+}
+code {
+  font-family: menlo, consolas, monospace;
+  font-size: 0.7692em;
+  color: #444;
+}
+img {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+}
+p img {
+  margin: 1px auto;
+  display: block;
+  max-width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+header,
+footer {
+  text-align: center;
+}
+header {
+  margin: 4.2308rem 0;
+}
+.blog-title {
+  color: #f55;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+footer {
+  font-family: 'Alegreya SC', georgia, serif;
+  text-transform: lowercase;
+}
+footer ul,
+footer ul li {
+  display: inline;
+  padding: 0 0.4615rem;
+}
+.footer-container {
+  background: #e6e5e2;
+  padding: 2.6154rem 0;
+  margin-top: 6.8462rem;
+}
+.copyright {
+  color: #aaa;
+  margin-top: 0.4615rem;
+}
+.post {
+  margin: 0;
+  padding-bottom: 3.2308rem;
+  text-align: justify;
+}
+.post p a {
+  text-decoration: none;
+  border-bottom: 1px dotted #444;
+}
+.post-title {
+  margin-top: 1.6154rem;
+  margin-bottom: 0.4615rem;
+}
+.index-post-title {
+  margin-top: 0.4615rem;
+}
+.date,
+.author,
+.more,
+.date a,
+.author a,
+.more a {
+  font-family: 'Alegreya SC', georgia, serif;
+  text-transform: lowercase;
+}
+.date {
+  text-align: center;
+  margin-bottom: 0;
+  color: #aaa;
+}
+.author {
+  text-align: center;
+  margin-bottom: 3.2308rem;
+  margin-top: 0;
+}
+.by {
+  font-family: 'Alegreya', georgia, serif;
+}
+.bybefore {
+  content: 'By\00A0';
+  text-transform: none;
+}
+.more {
+  color: inherit;
+}
+.archive {
+  margin: 0 auto;
+  padding-bottom: 3.2308rem;
+}
+.year {
+  text-align: center;
+}
+.archive ul {
+  padding: 0;
+  list-style-type: none;
+}
+.archive ul li {
+clearleft
+  border-bottom: dotted 1px #444;
+  height: 1.1539rem;
+  position: relative;
+  line-height: 1.6154rem;
+  margin-bottom: 1rem;
+}
+.archive-date,
+.archive-post-title {
+  background: #f6f5f2;
+  float: left;
+  position: absolute;
+}
+.archive-post-title {
+  max-width: 75%;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 0.4615rem;
+}
+.archive-date {
+  right: 0;
+  padding-left: 0.4615rem;
+}
+table {
+  margin: auto;
+}
+th {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  padding: 8px 12px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+td {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 14px;
+  padding: 0px 12px;
+  color: #000;
+  border-bottom: 1px dotted #ccc;
+}
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: font-size-small;
+  }
+  .container {
+    max-width: 480px;
+    width: 100%;
+    padding: 0 1.6154em;
+  }
+}

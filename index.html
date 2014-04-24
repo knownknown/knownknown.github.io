@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>near-perfect clarity
+    </title>
+    <link rel="alternate" href="https://dl.dropboxusercontent.com/u/39888659/known_known/feed.xml" type="application/rss+xml" title="there will be near-perfect clarity">
+    <link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/39888659/known_known/css/style.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya:400italic,400">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+SC">
+  </head>
+  <body>
+    <div class="container">
+      <header><img src="https://dl.dropboxusercontent.com/u/39888659/known_known/globe.png">
+        <p></p><a href="https://dl.dropboxusercontent.com/u/39888659/known_known/index.html" class="blog-title">near-perfect clarity</a>
+      </header>
+      <article class="post">
+        <h2 class="index-post-title"><a href="https://dl.dropboxusercontent.com/u/39888659/known_known/articles/02_sentiment/index.html">A Brief Note on Sentiment</a></h2>
+        <p class="date"><span>23 April 2014</span></p>
+        <section class="intro-content"><p><em>TLDR: Inferring the emotional content of text opens up very cool possibilities, but it’s just not appropriate for data with this level of nuance and complexity.</em></p>
+<p><strong>Introduction</strong></p>
+<p>One of the more exciting NLP applications to this data is “sentiment” analysis, which aims to automatically classify sentences and entities with the writer’s contextual emotions. Naively, one could this by simply taking a set of words with known sentiment scores (“happy”=positive, “awful”=negative, etc.) and counting up their occurrences to get an overall sentence or document score (the so-called <em>bag of words</em> model which ignores word order and grammar). This has some obvious draw-backs (“he was happy to spit in our face”, “we had an awfully good time”) and has been heavily extended to take into account local and even multi-sentence context. The Stanford <a href="http://nlp.stanford.edu/sentiment/">Recursive Model</a>, for example, turns the sentence into a tree using parts-of-speech, then builds a combined score from the leaves up. Perhaps “awfully good” could be correctly understood as single positive phrase instead of one positive word and one negative word. If the algorithm works, the implications can be tantalizing; see, for example, the IKANOW <a href="http://www.ikanow.com/making-the-most-of-sentiment-scores-with-ikanow-and-r/">analysis</a> of Enron e-mails; and Saif Mohammad’s time-series <a href="http://www.saifmohammad.com/WebDocs/NRC-TechReport-emotions-in-books-and-mail.pdf">analysis</a> of sentiment in books. In the context of diplomatic data, quantifying sentiment would express in numbers the cloud of emotions surrounding those actors and organizations we’re studying:</p>
+<ul>
+<li>What individuals are the most/least liked?</li>
+<li>How has that changed over time?</li>
+<li>Which are the most controversial, liked and hated in equal measure?</li>
+<li>Which diplomats are unusually friendly to some individuals but not others? This last one is especially important as it provides insight into the potential biases of our narrators.</li>
+</ul>
+<p>This emotional content may be even more informative than the factual, especially when the data has been heavily ascertained from one point-of-view. As it happens, bag-of-words sentiment analysis has been applied to such data to quantify U.S. relationships with foreign nations (<a href="http://www.technologyreview.com/view/423601/automated-processing-of-wikileaks-cables-reveals-us-friends-foes/">here</a> and <a href="http://vikparuchuri.com/blog/tracking-us-sentiments-over-time-in/">here</a>). Those projects are novel and the application clever, but the results are clearly noisy and not particularly informative without many assumptions. Perhaps we could do better by using a more advanced sentiment parser; analysing a single region where word-choice is more likely to be controlled; linking the sentiment to known political actors, and looking at a generally richer dataset.</p>
+<p><strong>Results</strong></p>
+<p>Let’s start with the good news. Here are some example sentences that had the highest sentiment:</p>
+<ul>
+<li>Analysts predict several decades of sustained robust economic growth, thanks in part to India’s youthful population and its technical and scientific prowess.</li>
+<li>USAID post-tsunami reconstruction projects are moving ahead smartly.</li>
+<li>He has good Kremlin access and a well-developed sense of what is realistic in light of Kremlin policies.</li>
+<li>He and President Putin are very popular and receive credit for Belgorod’s strong economy, active civil society, and vibrant academia.</li>
+</ul>
+<p>In the second instance we almost certainly got lucky that some other British-ism hadn’t been used instead of “smartly” (say, “briskly”). And the last two examples are nuanced in the real subject of their approval. But let’s not quibble, these are really quite positive!</p>
+<p>The bad news, though, is that these examples are pretty much the only true positives (in every sense of the word) over the tens of thousands of sentences that received sentiment scores before my computer said “enough”. Nearly every sentence was given a negative score, and examining individual cables that had extreme sentiment averages showed no indication of accuracy. If anything, the average sentiment was mostly representative of cable size and complexity (which makes sense, as the sentiment parser appears to down-weight complex sentences with positive words). None of the most negatively ranked cables I looked at could reasonably be interpreted as accurately classified. This, coupled with the fact that sentiment analysis is easily the most computationally intensive part of the language analysis, lead me to reluctantly abandon the strategy.</p>
+<p>Sentiment analysis clearly has value, and sentiment-based predictors of everything from <a href="http://www.lct-master.org/files/MullenSentimentCourseSlides.pdf">music reviews to twitter messages</a> already do very well. But pulling out emotional terms from 140 characters appears to be a much easier problem that annotating large, nuanced political documents.</p>
+</section>
+      </article>
+      <article class="post">
+        <h2 class="index-post-title"><a href="https://dl.dropboxusercontent.com/u/39888659/known_known/articles/01_named_entities/index.html">Named Entities</a></h2>
+        <p class="date"><span>22 April 2014</span></p>
+        <section class="intro-content"><p><em>TLDR: Extracting important entities from the text is an important first step and provides a birds-eye view of all the content. But what we’re interested in is most likely at the margins.</em></p>
+<p><strong>Introduction</strong></p>
+<p><strong>Results</strong></p>
+<p>The cables tagged “RS” consist of 7,803 locations; 19,105 organizations; and 20,680 persons. Roughly a quarter of the entities appear in at least two cables, and I’ll focus on these for now as they are less likely to be false identifications. A total of 280 (2%) unique entities account for 50% of the entity-to-cable relationships. The most over-represented entities are:</p>
+<table>
+<thead>
+<tr>
+<th>LOCATION</th>
+<th>ORGANIZATION</th>
+<th>PERSON</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.7% russia</td>
+<td>2.6% mfa</td>
+<td>2.9% putin</td>
+</tr>
+<tr>
+<td>5.5% us</td>
+<td>2.1% eu</td>
+<td>1.9% medvedev</td>
+</tr>
+<tr>
+<td>4.5% moscow</td>
+<td>2.0% nato</td>
+<td>1.1% lavrov</td>
+</tr>
+<tr>
+<td>2.0% united</td>
+<td>1.4% un</td>
+<td>0.7% obama</td>
+</tr>
+<tr>
+<td>1.9% georgia</td>
+<td>1.1% osce</td>
+<td>0.7% gottemoeller</td>
+</tr>
+<tr>
+<td>1.5% washington</td>
+<td>0.8% gazprom</td>
+<td>0.6% saakashvili</td>
+</tr>
+<tr>
+<td>1.5% eu</td>
+<td>0.6% ngo</td>
+<td>0.5% milorad</td>
+</tr>
+<tr>
+<td>1.5% europe</td>
+<td>0.6% duma</td>
+<td>0.4% bush</td>
+</tr>
+<tr>
+<td>1.3% ukraine</td>
+<td>0.6% usg</td>
+<td>0.3% dodik</td>
+</tr>
+<tr>
+<td>1.2% china</td>
+<td>0.5% unsc</td>
+<td>0.3% taylor</td>
+</tr>
+</tbody>
+</table>
+<p>Another way of representing this is to plot the cumulative distribution of occurrences ordered by their frequency. The full set of entities is too big to list, but we can reveal the entities at regular intervals to get an idea of the types of names in that part of the distribution.</p>
+<p><img src="/articles/01_named_entities/cumsum.PERSON.png" alt="PERSON distribution"></p>
+<p><img src="/articles/01_named_entities/cumsum.LOCATION.png" alt="LOCATION distribution"></p>
+<p><img src="/articles/01_named_entities/cumsum.ORGANIZATION.png" alt="ORGANIZATION distribution"></p>
+<p>The grey line here is what we would expect to see if the same number of entities were just mentioned uniformly by each cable (it’s also slightly convex because we’re ordering by frequency). The difference between these two lines is a rough metric of the diversity of the text. For example, we see that top locations reoccur much more frequently than top persons. In fact, only 48 locations account for 50% of <em>all</em> instances where a location is mentioned (compared to 448 organizations, and 1115 persons).</p>
+<p><strong>Discussion</strong></p>
+<p>Looking at the top entities, most of the locations and organizations are unsurprising and consist of common American or European terms and synonyms. The presence of Georgia and Ukraine this high on the list stands out, and is indicative of the important role those two countries play in the Russian “near-abroad”. This importance is further reflected in the abundance of references to Georgian president Saakashvili. The terms “Miloard” and “Dodik” are the only real surprises, referring to the Serbian <a href="http://en.wikipedia.org/wiki/Milorad_Dodik">politician</a> and representing the only other foreign entity. It’s interesting to note that Dodik appears to be a continued key player in Moscow and ardent supporter of the Russian occupation of Crimea.</p>
+<p>One of way of looking at this is that NER has reduced a set of documents containing 1.2 million lines down to the few key players with no apparent false-positives. Had we applied this approach to a secretive organization this table would already by quite useful. On the other hand, all we <em>really</em> learned could have been gleaned by skimming through World Fact Book on the US and Russia. NER is clearly relevant, but higher-level analysis will be needed to uncover truly novel information.</p>
+</section>
+      </article>
+    </div>
+    <div class="footer-container">
+      <div class="container">
+        <footer>
+          <ul>
+            <li><a href="https://dl.dropboxusercontent.com/u/39888659/known_known/index.html">Home</a></li>
+            <li><a href="https://dl.dropboxusercontent.com/u/39888659/known_known/about.html">About</a></li>
+            <li><a href="https://dl.dropboxusercontent.com/u/39888659/known_known/archive.html">Archive</a></li>
+          </ul>
+          <p class="copyright">&copy;2014 Author</p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
