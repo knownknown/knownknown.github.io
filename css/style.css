@@ -115,13 +115,15 @@ code {
   font-size: 0.7692em;
   color: #444;
 }
+p {
+  clear: both;
+}
 img {
   margin: 0 auto;
   display: block;
   max-width: 100%;
 }
 p img {
-  margin: 1px auto;
   display: block;
   max-width: 100%;
   border-bottom: 1px solid #ccc;
