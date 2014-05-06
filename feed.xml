@@ -5,9 +5,74 @@
     <atom:link href="http://knownknown.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://knownknown.github.io</link>
     <description>there will be near-perfect clarity</description>
-    <pubDate>Mon, 28 Apr 2014 20:00:00 -0400</pubDate>
+    <pubDate>Wed, 30 Apr 2014 20:00:00 -0400</pubDate>
     <generator>The mighty Wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Classification</title>
+      <link>http://knownknown.github.io/articles/04_classified/</link>
+      <pubDate>Wed, 30 Apr 2014 20:00:00 -0400</pubDate>
+      <guid isPermaLink="true">http://knownknown.github.io/articles/04_classified/</guid>
+      <author></author>
+      <!-- passing locals.url resolves all relative urls to absolute-->
+      <description>&lt;p&gt;&lt;em&gt;TLDR:&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Lucky for us, the cables follow a structured form with several important pieces of meta-information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Send date (which we’ve looked at previously)&lt;/li&gt;
+&lt;li&gt;Subject.&lt;/li&gt;
+&lt;li&gt;Origin and destination (surprisingly unimportant, with cables typically originating from a US Mission in the host country and destined for general federal departments)&lt;/li&gt;
+&lt;li&gt;TAGS (very generally describing the cable contents, e.g. “External Political Relations”, “Military and Defense Arrangements”, etc.)&lt;/li&gt;
+&lt;li&gt;Classification status.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One often overlooked (actually, ignored in the literature) data point is that every classified cable includes a sentence stating the person who classified it and the formal reasons. The &lt;a href=&quot;http://en.wikipedia.org/wiki/Classified_information_in_the_United_States#Classification_categories&quot;&gt;reasons themselves&lt;/a&gt; are very general, but the diplomat setting the classification essentially takes ownership of the cable. They may not be the original author (as cables are often drafted by lower-level diplomats) but they are the last person in charge once the cable leaves it’s origin. Looking for patterns across these individuals can provide insights into the structure of embassy work and the distribution of labour. And unlike direct analysis of the text, these patterns represent priorities set by the department &lt;em&gt;itself&lt;/em&gt;. Instead of guessing what content was deemed important, we can learn these priorities directly. Which entities are most discussed by individuals within the department? Do they tend to work together or focus on topics individually? Which topics had focus and when? With the classification data, these questions can now be tested directly.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Individual associations&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Perhaps one of the oldest statistical &lt;a href=&quot;http://en.wikipedia.org/wiki/Student%27s_t-test&quot;&gt;tests&lt;/a&gt; evaluates differences between two sets of data, or an &lt;em&gt;association&lt;/em&gt; between an indicator and an outcome. We can apply such techniques to this data in looking for an association between classifiers and specific topics. As with any fundamental technique, there are dozens of ways to do it, but to start I simply counted the fraction of times an entity (say “Bosnia”) is mentioned by a specific classifier and compared it to the fraction in the rest of the classified data. If the classifier mentioned Bosnia much more or less than everyone else, we can assess the significance of this deviation. Since we’re working with small count data, the Fisher’s Exact Test is appropriate in evaluating significance. This way, every classifier was tested against every entity they classified, and the final outcome was &lt;a href=&quot;http://en.wikipedia.org/wiki/Bonferroni_correction&quot;&gt;corrected&lt;/a&gt; for all the tests performed to make sure we weren’t just pulling out random patterns because we rolled the dice so many times.&lt;/p&gt;
+&lt;p&gt;Turns out the data is highly structured, and the top ten classifiers (which had &amp;gt;100 cables each) all strongly associated with many terms. Below is the set of significant associations for the LOCATION category:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;http://knownknown.github.io/articles/04_classified/assoc.LOCATION.5.png&quot; alt=&quot;LOCATION&quot;&gt; &lt;img src=&quot;http://knownknown.github.io/articles/04_classified/assoc.LOCATION.6.png&quot; alt=&quot;LOCATION&quot;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;http://knownknown.github.io/articles/04_classified/assoc.LOCATION.10.png&quot; alt=&quot;LOCATION&quot;&gt; &lt;img src=&quot;http://knownknown.github.io/articles/04_classified/assoc.LOCATION.8.png&quot; alt=&quot;LOCATION&quot;&gt;   &lt;img src=&quot;http://knownknown.github.io/articles/04_classified/assoc.LOCATION.3.png&quot; alt=&quot;LOCATION&quot;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;http://knownknown.github.io/articles/04_classified/assoc.LOCATION.2.png&quot; alt=&quot;LOCATION&quot;&gt; &lt;img src=&quot;http://knownknown.github.io/articles/04_classified/assoc.LOCATION.1.png&quot; alt=&quot;LOCATION&quot;&gt; &lt;img src=&quot;http://knownknown.github.io/articles/04_classified/assoc.LOCATION.4.png&quot; alt=&quot;LOCATION&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The red bar corresponds to the fraction of mentions received by that entity, and the black bar is the fraction in the rest of the data. These associations are not just significant, but are also very strong in absolute terms; almost every diplomat has a topic that they discuss &lt;em&gt;much&lt;/em&gt; more than the rest. Looking for relationships between the entities, we can guess at some broad topics for each diplomat:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Charles English &amp;amp; Judith Cefkin: Bosnia &amp;amp; Serbia &amp;amp; Yugoslavia.&lt;/li&gt;
+&lt;li&gt;Jerry Taylor: Ukraine &amp;amp; Belarus&lt;/li&gt;
+&lt;li&gt;Eric Schultz: The south-stream pipeline route spearheaded by Gazprom, with construction starting in Krasnoyarsk.&lt;/li&gt;
+&lt;li&gt;John Beyrle &amp;amp; Alice Wells: Russo-Georgian War.&lt;/li&gt;
+&lt;li&gt;William Burns: Chechnya and the middle east.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The overall departmental structure appears to be fairly divided, with one or two individuals focusing on each of these topics. Looking at all the topics together also fleshes out the general shape of the Russian conversation. Topics that we had previously guessed as important - Georgia, Bosnia - are now clearly important for high-level individuals, and others - such as Russian oil resources - are now on the radar.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Associations and relationships&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Going beyond the individual diplomat-entity associations, we can try to visualize all of these relationships together by placing them in a graph (you knew this was coming, right? At least it’s not one of those animated, spring-loaded nightmares. But be sure to zoom in for detail):&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://knownknown.github.io/articles/04_classified/graph.svg&quot; alt=&quot;graph&quot;&gt;&lt;/p&gt;
+&lt;p&gt;So what’s going on here? Each node represents an entity (PERSON, LOCATION, or ORGANIZATION), and every pair of nodes has an edge weight corresponding to the number of cables they both appear in. Nodes that never appear together have a weight of zero, and so on. To preserve our sanity, only those nodes that were significantly positively associated with at least one diplomat have been plotted here, and their colours correspond to the most associated diplomat. This is expected to create a distortion in the graph, since we’re selecting precisely those entities that are polarizing, but that’s actually &lt;em&gt;desireable&lt;/em&gt;. We’re specifically interested in identifying strata within the graph which correlate with individual diplomats, and so letting the associated nodes drive the graph structure encourages this. Nodes are also scaled according to their PageRank, which basically measures how many other large nodes each node is connected to. Finally, after everything is laid out the edges are hidden for clarity (as is often the case, they’re &lt;a href=&quot;http://knownknown.github.io/articles/04_classified/graph.edges.png&quot;&gt;pretty&lt;/a&gt; but mostly meaningless; the one useful observation is that the neighbouring Gottemoeller and English nodes are mostly independent). I’ll add a caveat that many of the attractive qualities (the spherical shape, the spacing between nodes) are an artefact of the layout algorithm, so one should be careful not to draw conclusions like “&lt;em&gt;diplomatic communications are naturally geometrically circular&lt;/em&gt;“ or some-such.&lt;/p&gt;
+&lt;p&gt;That said, the final network is highly informative and crystallizes our previous term-based guesses. A small number of primary groups are clearly visible:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rose Gottemoeller: New START; Geneva (the site of the negotiations); SLBMS (ballistic missiles); NPT (non-proliferation treaty); and various Russian and US negotiators.&lt;/li&gt;
+&lt;li&gt;Charles English: Serb/Bosnian relations; Miloard Dodik, the president of Republika Srpska; SDA (The Bosnian Party of Democratic Action); and Srebrenica. There is also strong overlap with diplomat Judith Cefkin.&lt;/li&gt;
+&lt;li&gt;Jerry Taylor: Ukraine, Kazakhstan, and Belarus; apparently strong overlap with the Gottemoeller/New START work (through the JCIC - Joint Compliance and Inspection Commission).&lt;/li&gt;
+&lt;li&gt;Eric Schultz: finance and natural resources, focusing on Gazprom and Lukoil.&lt;/li&gt;
+&lt;li&gt;John Beyrle &amp;amp; Alice Wells: the Georgian war. With Wells focusing on Russian media (the newspapers Kommersant, Novaya Gazeta, Nezavisimaya Gazeta); reform movements (Kasparov, Nemtsov, the progressive Yabloko and Union of Right Forces parties) and hard-liners (far-right LDPR, communist KPRF parties).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As we suspected most cables focus on topics related to New START negotiations, the Orange Revolution in Ukraine, Bosnian statehood, and the Georgian war; and each topic is helmed by one or two diplomats.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://knownknown.github.io/articles/04_classified/time_graph.gif&quot;&gt;Animated&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Graph or trap?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I’ll admit that I’ve dreaded looking at the data in this massive graph form. Such visualizations tend to be extremely attractive and carry the &lt;em&gt;appearence&lt;/em&gt; of information, but often confuse more than they inform. Usually, the viewer is awed by the complexity of the data and then moves on with their day. Perhaps they see a few clusters or over-represented colours and think “&lt;em&gt;This data sure is complex. But it’s also structured.&lt;/em&gt;“, having learned no more than what could be presented by a handful of statistics. That may be even worse.&lt;/p&gt;
+&lt;p&gt;So to make sure we’re not just being seduced by &lt;a href=&quot;http://eagereyes.org/techniques/graphs-hairball&quot;&gt;hairballs&lt;/a&gt; it’s useful to think about how much more information we’ve &lt;em&gt;really&lt;/em&gt; gained over looking at the data in sorted tables.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Time Series</title>
       <link>http://knownknown.github.io/articles/03_time_series/</link>
@@ -15,7 +80,8 @@
       <guid isPermaLink="true">http://knownknown.github.io/articles/03_time_series/</guid>
       <author></author>
       <!-- passing locals.url resolves all relative urls to absolute-->
-      <description>&lt;p&gt;&lt;em&gt;TLDR: Examining the distribution of cables and entities over time provides important context and identifies a small number of well-documented entities that are likely to be important. However, we’re still missing the direct relationships between these entities.&lt;/em&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;em&gt;Examining the distribution of cables and entities over time provides important context and identifies a small number of well-documented entities that are likely to be important. However, we’re still not capturing the direct relationships between these entities.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/p&gt;
 &lt;p&gt;In the previous post, a naive list of highly occurring entities provided some sense of the diversity of this data as well as a condensed “Top 10” of the people, locations, and organizations discussed in the cables. One dimension that’s entirely missing from that approach is that of time. Each cable has been coded with a time-stamp for when it was sent, allowing us to look at the frequency of communication across the available time-frame. To get a birds eye view of all cables, I’ve plotted their number over consecutive 10-day periods, with the year breaks indicated:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://knownknown.github.io/articles/03_time_series/time_ser.total.png&quot; alt=&quot;time-series total&quot;&gt;&lt;/p&gt;
 &lt;p&gt;It’s immediately obvious that the bulk of the cables were gathered from 2006-2010. We can similarly zoom in on cables mentioning specific entities and examine their time series. As an example, let’s take a look at occurrences over time for two of the previously identified common words “Saakashvili” (the president of Georgia) and “South Ossetia” (the disputed, formerly Georgian, territory). The representation is the same as before, but I’ve also highlighted the explicit start of the Russo-Georgian War in August, 2008:&lt;/p&gt;
@@ -44,7 +110,8 @@
       <guid isPermaLink="true">http://knownknown.github.io/articles/02_sentiment/</guid>
       <author></author>
       <!-- passing locals.url resolves all relative urls to absolute-->
-      <description>&lt;p&gt;&lt;em&gt;TLDR: Inferring the emotional content of text opens up very cool possibilities, but it’s just not appropriate for data with this level of nuance and complexity.&lt;/em&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;em&gt;Inferring the emotional content of text opens up very cool possibilities, but it’s just not appropriate for data with this level of nuance and complexity.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;One of the more exciting NLP applications to this data is “sentiment” analysis, which aims to automatically classify sentences and entities with the writer’s contextual emotions. Naively, one could this by simply taking a set of words with known sentiment scores (“happy”=positive, “awful”=negative, etc.) and counting up their occurrences to get an overall sentence or document score (the so-called &lt;em&gt;bag of words&lt;/em&gt; model which ignores word order and grammar). This has some obvious draw-backs (“he was happy to spit in our face”, “we had an awfully good time”) and has been heavily extended to take into account local and even multi-sentence context. The Stanford &lt;a href=&quot;http://nlp.stanford.edu/sentiment/&quot;&gt;Recursive Model&lt;/a&gt;, for example, turns the sentence into a tree using parts-of-speech, then builds a combined score from the leaves up. Perhaps “awfully good” could be correctly understood as single positive phrase instead of one positive word and one negative word. If the algorithm works, the implications can be tantalizing; see, for example, the IKANOW &lt;a href=&quot;http://www.ikanow.com/making-the-most-of-sentiment-scores-with-ikanow-and-r/&quot;&gt;analysis&lt;/a&gt; of Enron e-mails; and Saif Mohammad’s time-series &lt;a href=&quot;http://www.saifmohammad.com/WebDocs/NRC-TechReport-emotions-in-books-and-mail.pdf&quot;&gt;analysis&lt;/a&gt; of sentiment in books. In the context of diplomatic data, quantifying sentiment would express in numbers the cloud of emotions surrounding those actors and organizations we’re studying:&lt;/p&gt;
 &lt;ul&gt;
@@ -68,16 +135,24 @@
 </description>
     </item>
     <item>
-      <title>Named Entities</title>
+      <title>Getting Started - Named Entities</title>
       <link>http://knownknown.github.io/articles/01_named_entities/</link>
       <pubDate>Mon, 21 Apr 2014 20:00:00 -0400</pubDate>
       <guid isPermaLink="true">http://knownknown.github.io/articles/01_named_entities/</guid>
       <author></author>
       <!-- passing locals.url resolves all relative urls to absolute-->
-      <description>&lt;p&gt;&lt;em&gt;TLDR: Extracting important entities from the text is an important first step and provides a birds-eye view of all the content. But what we’re interested in is most likely at the margins.&lt;/em&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;em&gt;Extracting important entities from the text is a useful first step and provides a birds-eye view of all the content. But what we’re interested in is most likely at the margins.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Results&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The cables tagged “RS” consist of 7,803 locations; 19,105 organizations; and 20,680 persons. Roughly a quarter of the entities appear in at least two cables, and I’ll focus on these for now as they are less likely to be false identifications. A total of 280 (2%) unique entities account for 50% of the entity-to-cable relationships. The most over-represented entities are:&lt;/p&gt;
+&lt;p&gt;The entire Cablegate release consists of over 250,000 cables from a 20 year period, over a gigabyte of full-text storage. To get a sense of the data, these initial analyses will focus on the 8,000 cables tagged “RS”, corresponding to communication about Russia and neighbouring countries. Russia was chosen for several reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It’s one of the single most-mentioned countries outside of the Middle East. At the same time, it appears to be strongly under-reported, as news agencies focused on cables relating to Iraq and Afghanistan or colourful personalities.&lt;/li&gt;
+&lt;li&gt;It’s an extremely important American adversary, with several major geo-political events (such as the Georgian War) occurring during the leaked time-frame. As a consequence, it features key players and organizations that are mostly well-known in the West.&lt;/li&gt;
+&lt;li&gt;It’s continued to engage in military activity that strongly mirrors the events of the Georgian War, and so there is hope that diplomatic communications from that time will inform our understanding of current events.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first step in analysing so much text is breaking it down into major concepts and establishing their relationships. Concepts can be difficult to pin down, but the automated extraction of specific objects has been well-developed in the field of Natural Language Processing (NLP). Termed Named Entity Recognition (NER), such methods use sentence context and parts-of-speech to identify specific categories of words (typically nouns) based on a training set. For this data, I applied the &lt;a href=&quot;http://nlp.stanford.edu/software/CRF-NER.shtml&quot;&gt;Stanford NER&lt;/a&gt; to extract PERSON, LOCATION, and ORGANIZATION entities based on a training set of newspaper text. We’re lucky that most of the cables are written in newspaper style, so the training set is a good match. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Top entities&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The Russia/RS cables tagged consist of 7,803 locations; 19,105 organizations; and 20,680 persons. Roughly a quarter of the entities appear in at least two cables, and I’ll focus on these for now as they are less likely to be false identifications. A total of 280 (2%) unique entities account for 50% of the entity-to-cable relationships. The most over-represented entities are:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -144,9 +219,9 @@
 &lt;p&gt;&lt;img src=&quot;http://knownknown.github.io/articles/01_named_entities/cumsum.LOCATION.png&quot; alt=&quot;LOCATION distribution&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://knownknown.github.io/articles/01_named_entities/cumsum.ORGANIZATION.png&quot; alt=&quot;ORGANIZATION distribution&quot;&gt;&lt;/p&gt;
 &lt;p&gt;The grey line here is what we would expect to see if the same number of entities were just mentioned uniformly by each cable (it’s also slightly convex because we’re ordering by frequency). The difference between these two lines is a rough metric of the diversity of the text. For example, we see that top locations reoccur much more frequently than top persons. In fact, only 48 locations account for 50% of &lt;em&gt;all&lt;/em&gt; instances where a location is mentioned (compared to 448 organizations, and 1115 persons).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Discussion&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Interpretation&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Looking at the top entities, most of the locations and organizations are unsurprising and consist of common American or European terms and synonyms. The presence of Georgia and Ukraine this high on the list stands out, and is indicative of the important role those two countries play in the Russian “near-abroad”. This importance is further reflected in the abundance of references to Georgian president Saakashvili. Serbian Serbian &lt;a href=&quot;http://en.wikipedia.org/wiki/Milorad_Dodik&quot;&gt;politician&lt;/a&gt; Miloard Dodik is the only surprise and the only other foreign entity. It’s interesting to note that Dodik appears to be a continued key player in Moscow and ardent supporter of the recent Russian occupation of Crimea.&lt;/p&gt;
-&lt;p&gt;One of way of looking at this is that NER has reduced a set of documents containing 1.2 million lines down to the few key players with no apparent false-positives. Had we applied this approach to a secretive organization this table would already by quite useful. On the other hand, all we &lt;em&gt;really&lt;/em&gt; learned could have been gleaned by skimming through World Fact Book on the US and Russia. NER is clearly relevant, but higher-level analysis will be needed to uncover truly novel information.&lt;/p&gt;
+&lt;p&gt;One way of looking at this is that NER has reduced a set of documents containing 1.2 million lines down to the few key players with no apparent false-positives. Had we applied this approach to a secretive organization this table would already by quite useful. On the other hand, all we &lt;em&gt;really&lt;/em&gt; learned could have been gleaned by skimming through World Fact Book on the US and Russia. NER is clearly relevant, but higher-level analysis will be needed to uncover truly novel information.&lt;/p&gt;
 </description>
     </item>
   </channel>
