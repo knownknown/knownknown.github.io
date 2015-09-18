@@ -17,17 +17,23 @@ body {
   text-rendering: optimizeLegibility;
   font-family: 'Alegreya', georgia, serif;
   font-size: 1rem;
-  line-height: 2rem;
+  line-height: 1.6154rem;
   font-weight: 400;
   color: #444;
   background: #f6f5f2;
 }
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0;
   word-break: hyphenate;
   word-wrap: break-word;
+}
+.container p,
+.container ul {
+  margin: 1em auto;
+  text-align: justify;
+  max-width: 800px;
 }
 a {
   color: #444;
@@ -48,8 +54,9 @@ h5,
 h6 {
   font-weight: normal;
   font-style: italic;
-  text-align: center;
-  margin: 1rem 0;
+  text-align: left;
+  margin: 1rem 50px 1rem 50px;
+  max-width: 800px;
   line-height: 2.6154rem;
 }
 h1 a,
@@ -72,6 +79,7 @@ h6 a:hover {
 }
 h1 {
   font-size: 2.6154rem;
+  text-align: center;
 }
 h2 {
   font-size: 2rem;
@@ -115,9 +123,6 @@ code {
   font-size: 0.7692em;
   color: #444;
 }
-p {
-  clear: both;
-}
 img {
   margin: 0 auto;
   display: block;
@@ -127,6 +132,36 @@ p img {
   display: block;
   max-width: 100%;
   border-bottom: 1px solid #ccc;
+}
+figcaption {
+  border: 1px solid #ddd;
+  font-size: 0.7692em;
+  text-align: center;
+  display: table-caption;
+  caption-side: bottom;
+  clear: both;
+  line-height: 1.6154em;
+  padding: 0.7692em;
+  margin: 0;
+}
+figure.full {
+  float: none;
+  background: #eee;
+  border: 1px solid #ddd;
+  margin: 1rem auto;
+  display: table;
+}
+figure.left {
+  float: left;
+  border: 1px solid #ddd;
+  margin: 1rem 1rem 1rem 0;
+  display: table;
+}
+figure.right {
+  float: right;
+  border: 1px solid #ddd;
+  margin: 1rem 0 1rem 1rem;
+  display: table;
 }
 header,
 footer {
@@ -271,7 +306,7 @@ td {
     font-size: font-size-small;
   }
   .container {
-    max-width: 480px;
+    max-width: 800px;
     width: 100%;
     padding: 0 1.6154em;
   }
